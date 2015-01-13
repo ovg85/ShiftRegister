@@ -19,9 +19,14 @@ int main()
 	
 	while(1)
 	{
+		_delay_ms(250);
+		PORTB |= (1 << 0);
+
 		SendData(data);	
 		data=data+1;	
-		pause(500);		
+		_delay_ms(250);	
+		PORTB &= ~(1 << 0);
+	
 	}
 	return 1;
 }
